@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART LENDER</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+
+        html {
+            user-select: none;
+        }
+
+        body {
+            margin-top: 7%;
+            color: white;
+            margin: 0;
+            background-color: #FFFFFF;
+            padding : 0;
+            width: 100%;
+            height: 200%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+
+
+        html {
+            background: rgb(20, 30, 48);
+            background: radial-gradient(circle, #ffe4c4 16%, #ffe4c4 79%);
+        }
+
+        h1 {
+            font-size: 45px;
+            font-family: 'Aref Ruqaa Ink', serif;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-family: 'Antic Slab', serif;
+        }
+
+        h6 {
+            font-size: 20px;
+            font-family: 'Antic Slab', serif;
+        }
+
+        /* ~~~~~~~ BUTTON ~~~~~~~ */
+
+        .container,
+        .container:before,
+        .container:after {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font: 300 1em/1.5 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+            text-decoration: none;
+            color: #111;
+        }
+
+        .btn {
+            background: rgb(236, 240, 241);
+        }
+
+        .container {
+            min-width: 500px;
+            margin: 5% auto;
+            text-align: center;
+        }
+
+
+        button:hover {
+            cursor: pointer
+        }
+
+        button {
+            background: transparent;
+            outline: none;
+            position: relative;
+            border: 3px solid #031D44;
+            padding: 15px 50px;
+            overflow: hidden;
+        }
+
+        /*button:before (attr data-hover)*/
+        button:hover:before {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        button:before {
+            content: attr(data-hover);
+            position: absolute;
+            top: 1.1em;
+            left: 0;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            font-size: .8em;
+            opacity: 0;
+            transform: translate(-100%, 0);
+            transition: all .3s ease-in-out;
+        }
+
+        /*button div (button text before hover)*/
+        button:hover div {
+            opacity: 0;
+            transform: translate(100%, 0)
+        }
+
+        button div {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            font-size: .8em;
+            transition: all .3s ease-in-out;
+        }
+
+        /*--- Footer ---*/
+
+        .footer {
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #031D44;
+            padding: 20px 0px;
+            /* margin: 0px 20px;*/
+
+            display: inline-block;
+            position: relative;
+            opacity: 0.75;
+        }
+
+        #d {
+            margin-top: -40px;
+            font-family: 'EB Garamond', serif;
+            letter-spacing: 0.5px;
+        }
+
+        #p {
+            margin-top: -50px;
+            font-family: 'EB Garamond', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .nav-link::before {
+            transition: 300ms;
+            height: 3px;
+            content: "";
+            position: absolute;
+            background-color: #031D44;
+        }
+
+        .nav-link-fade-up::before {
+            width: 100%;
+            bottom: 5px;
+            opacity: 0;
+        }
+
+        .nav-link-fade-up:hover::before {
+            bottom: 10px;
+            opacity: 1;
+        }
+
+        p {
+            color: white;
+            font-family: 'Aref Ruqaa Ink', serif;
+            letter-spacing: 0.5px;
+        }
+        .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 800%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+   align:left;
+    overflow: auto;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}
+
+    </style>
+
+</head>
+
+<body bgcolor="#FFE4C4">
+    <main >
+ <div class="topnav">
+  <a class="active" href="index1.html" text-align="left">Home</a>
+  
+</div>
+        <center>
+            <h1 style="color:blue">Smart Lender</h1>
+            <h3 style="color:cornflowerblue">Find your Loan Eligibility here</h3>
+            <h6 style="color:CadetBlue">Tap the below button and fill the details to know your Loan Eligibility
+            </h6>
+
+            <div class="container">
+                <a href="./predict1.html">
+                    <button class="glow-on-hover" type="button">CLICK TO CONTINUE</button>
+                </a>
+            </div>
+
+            <footer>
+                <div class="footer">
+                    <p style="color:black">Done by:-</p> <br>
+
+                    <a id="d" class="nav-link nav-link-fade-up"
+                        target="_blank">Chirumamilla Arjun
+                    </a>
+
+                    <span style="font-family: 'EB Garamond', serif;"> &nbsp; & &nbsp;</span>
+                    <a id="p" class="nav-link nav-link-fade-up" 
+                        target="_blank">Dabbugunta Yaswanth</a>
+                    <span style="font-family: 'EB Garamond', serif;"> &nbsp; & &nbsp;</span>
+                    <a id="d" class="nav-link nav-link-fade-up"
+                        target="_blank">Devanathan R
+                    </a>
+                    <span style="font-family: 'EB Garamond', serif;"> &nbsp; & &nbsp;</span>
+                    <a id="d" class="nav-link nav-link-fade-up"
+                        target="_blank">Devarala Praveen Kumar
+                    </a> 
+                </div>
+            </footer>
+        </center>
+
+
+    </main>
+</body>
+
+</html>
